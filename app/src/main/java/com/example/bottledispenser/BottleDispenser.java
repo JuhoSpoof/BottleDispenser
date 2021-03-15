@@ -51,15 +51,16 @@ public class BottleDispenser {
 
     }
 
-    public void addMoney(TextView naytto, SeekBar seekBar) {
+    public void addMoney(TextView naytto, SeekBar seekBar, TextView moneyNaytto) {
         //int seekValue = seekBar.getProgress();
         //money += 1;
         money += seekBar.getProgress();
         System.out.println("Klink! Added more money!");
         naytto.setText("Klink! Added more money!");
+        moneyNaytto.setText(("Money in machine: "+money));
     }
 
-    public void buyBottle(TextView naytto) {
+    public void buyBottle(TextView naytto, TextView moneyNaytto) {
         int i = bottles;
         if (bottles < 1){
             System.out.println("Out of bottles!");
@@ -72,6 +73,8 @@ public class BottleDispenser {
             money   -= bArray.getPrice();
             System.out.println("KACHUNK! "+ bArray.getName() +" came out of the dispenser!");
             naytto.setText("KACHUNK! "+ bArray.getName() +" came out of the dispenser!");
+            moneyNaytto.setText(("Money in machine: "+money));
+
             //}
         }
         else{
@@ -81,10 +84,12 @@ public class BottleDispenser {
 
     }
 
-    public void returnMoney(TextView naytto) {
+    public void returnMoney(TextView naytto, TextView moneyNaytto) {
         money = 0;
         System.out.println("Klink klink. Money came out!");
         naytto.setText("Klink klink. Money came out!");
+        moneyNaytto.setText(("Money in machine: "+money));
+
     }
 
     public void bottleList(){

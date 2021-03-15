@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         addMoneyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BD.addMoney(naytto, seekBar);
+                BD.addMoney(naytto, seekBar, moneyNaytto);
             }
         });
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         returnMoneyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BD.returnMoney(naytto);
+                BD.returnMoney(naytto, moneyNaytto);
             }
         });
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         buyBottleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BD.buyBottle(naytto);
+                BD.buyBottle(naytto, moneyNaytto);
             }
         });
 
